@@ -1,9 +1,9 @@
 import path from "path";
 import fs, { promises as fsp } from "fs";
 import getEntries from "./getEntries";
-import sleep from "./sleep";
+import { sleep } from "./sleep";
 import filterInterestingEntries from "./filterInterestingEntries";
-import notifyEntries from "./notifyTitle";
+import notifyEntries from "./notify";
 import config from "./config";
 import { Entry } from "./Entry";
 

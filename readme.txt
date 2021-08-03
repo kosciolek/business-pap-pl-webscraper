@@ -1,14 +1,14 @@
--------- Wymagania:
+# Wymagania
 NodeJS
 https://nodejs.org/en/
 
--------- Uruchamianie
+# Uruchamianie
 wykonaj "npm build" w folderze projektu (projekt się przekompiluje)
 ustaw config.json
 wykonaj "npm start" (program startuje)
 
 
--------- Config:
+# Config:
 url: link, z którego będą brane dane
 interval: co ile milisekund mamy pobierać dane? (jeśli dasz za nisko, pap.pl może cię zablokować, lub net nie wytrzyma)
 mail_receiver: mail na który będą wysyłane notyfikacje

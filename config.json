@@ -1,7 +1,7 @@
 {
   "url": "http://biznes.pap.pl/pl/reports/espi/all,2020,0,0,1",
   "interval": "5000",
-  "mail_receiver": "mickeyrepository@gmail.com",
+  "mail_receiver": "aaa@gmail.com",
   "filtering": {
     "string_keywords": ["komentarz", "raport"],
     "regex_keywords": ["(lipiec|lipca|lipcu) ?2020"]

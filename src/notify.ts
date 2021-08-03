@@ -1,21 +1,18 @@
-import path from "path";
 import notifier from "node-notifier";
 import nodemailer from "nodemailer";
+import { EMAIL_PASSWORD, SENDER_EMAIL } from "./const";
 import { Entry } from "./Entry";
 import config from "./config";
-
-const emailName = "biznespapnotyfikacje@gmail.com";
-const emailPassword = "ail&continue=https%3A%2F%2Fma";
 
 const transport = nodemailer.createTransport({
   service: "Gmail",
   auth: {
-    user: emailName,
-    pass: emailPassword,
+    user: SENDER_EMAIL,
+    pass: EMAIL_PASSWORD,
   },
 });
 
-const makeEmailHtml = (entries: Entry[]) =>
+const createEmailBody = (entries: Entry[]) =>
   `<body>
   <div
     style="
@@ -70,13 +67,13 @@ const notifyEntries = async (mailReceiver: string, ...entries: Entry[]) => {
   });
 
   await transport.sendMail({
-    from: `Biznes Pap Notyfikacja <${emailName}>`,
+    from: `Biznes Pap Notyfikacja <${SENDER_EMAIL}>`,
     to: mailReceiver,
     subject: "Znaleziono nowe tutuły na biznes pap",
     text: `Znaleziono nowe tytuły na biznes pap pl: ${entries
       .map((x) => x.title)
       .join(" ")}`,
-    html: makeEmailHtml(entries),
+    html: createEmailBody(entries),
   });
 };
 
